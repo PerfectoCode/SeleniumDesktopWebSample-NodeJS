@@ -1,0 +1,12 @@
+machine:
+  node:
+    version: 6.9.1
+
+dependencies:
+  override:
+    - npm install
+  cache_directories:
+
+test:
+  override:
+    - npm test
