@@ -1,5 +1,7 @@
 # NodeJS + Protractor Desktop Web Code Sample
 
+[![CircleCI](https://circleci.com/gh/PerfectoCode/SeleniumDesktopWebSample-NodeJS.svg?style=shield)](https://circleci.com/gh/PerfectoCode/SeleniumDesktopWebSample-NodeJS)
+
 This code sample demonstrates how to use Perfecto Web Machines & Protractor in order to execute tests 
 for your web applications on the cloud. 
 
