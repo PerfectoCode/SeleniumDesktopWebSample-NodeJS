@@ -1,0 +1,15 @@
+{
+  "name": "webautomationsamplenodejs",
+  "version": "1.0.0",
+  "description": "a code sample demonstrate how to use Protractor in order to execute automation tests on Perfecto Lab",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/protractor conf.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "perfecto-reporting": "^2.0.0",
+    "protractor": "^5.1.2"
+  }
+}
