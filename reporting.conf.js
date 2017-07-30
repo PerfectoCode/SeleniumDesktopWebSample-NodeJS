@@ -1,8 +1,7 @@
 var reportingClient;
 let logger = console,
   host = process.env.host,
-  user = process.env.user,
-  password = process.env.password;
+  token = process.env.token;
 
 // Use Security token for Perfecto Turbo Web authentication
 // let token = '';
@@ -28,9 +27,7 @@ exports.config = {
     browserName: 'Chrome',
     browserVersion: '58',
     resolution: '1280x1024',
-    user: user,
-    password: password,
-    // securityToken: token
+    securityToken: token
   },
 
   //Framework to use. Jasmine is recommended.
