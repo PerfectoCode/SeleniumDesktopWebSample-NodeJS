@@ -10,18 +10,35 @@ for your web applications on the cloud.
 - Add your Perfecto Lab credentials within one of the conf.js files:
 ```JavaScript
 ...
-host = process.env.host,
-user = process.env.user,
-password = process.env.password;
+token = process.env.token,
+host = process.env.host;
 ... 
 ```
-Note! you may want to use env variable for your credentials as demonstrated
+You may want to use env variable for your credentials as demonstrated.
 
-- Note:exclamation: the project include 2 different specs and 2 different conf.js files: 
+Old school credentials may be used by replacing the security token with username and password (Not available for Turbo Web)
+```JavaScript
+...
+user = process.env.user,
+password = process.env.password;
+...
+```
+:exclamation:Using old school credentials is not a best practice and is not recommended.
+
+- Note:exclamation: the project include 2 different specs and 2 different conf.js files (Both using Turbo Web):
     - conf.js and spec.js for running Desktop Web tests without Perfecto DigitalZoom Reporting
     - reporting.conf.js and reporting.spec.js for running Desktop Web tests with Perfecto DigitalZoom Reporting.
     
 - Run the project from your IDE or using command line for example `Protractor conf.js`
+
+:exclamation:For Non Turbo Web replace:
+```JavaScript
+seleniumAddress: `https://${host}/nexperience/perfectomobile/wd/hub/fast`,
+```
+with:
+```JavaScript
+seleniumAddress: `https://${host}/nexperience/perfectomobile/wd/hub`,
+```
 
 ### Web Capabilities: 
 
@@ -32,11 +49,9 @@ capabilities: {
     platformName: 'Windows',
     platformVersion: '10',
     browserName: 'Chrome',
-    browserVersion: '58',
+    browserVersion: 'latest',
     resolution: '1280x1024',
-    user: user,
-    password: password,
-    // securityToken: token
+    securityToken: token;
 },
 ```
 
@@ -46,30 +61,7 @@ capabilities: {
 
 Perfecto's Desktop Web environment introduces an accelerated interface to Web Browser automation with its new Turbo web interface. Using this new environment will allow you to connect quicker to the browser "device" you select for automating and testing your web application.
 
-*Click [here](http://developers.perfectomobile.com/display/PD/Turbo+Web+Automation) to read more about Turbo Web Automation.*
-
-- To enable Turbo Web Automation in this code sample follow the instructions in the link above in order to generate authentication token.
-Place the authentication in one of the Turbo Web test's files:
-```JavaScript
-// Use Security token for Perfecto Turbo Web authentication
-// let token = '';
-
-exports.config = {
-
-  seleniumAddress: `https://${host}/nexperience/perfectomobile/wd/hub/fast`,
-
-  /**
-   * For perfecto Turbo Web follow the instructions at:
-   * http://developers.perfectomobile.com/display/PD/Turbo+Web+Automation
-   *
-   * In addition change the seleniumAddress in this config file to be:
-   * seleniumAddress: `https://${host}/nexperience/perfectomobile/wd/hub/fast`,
-   *
-   * and add your security token to the capabilities
-   */
-
-....
-```
+*Click [here](http://developers.perfectomobile.com/display/PD/Automating+Web-apps+with+Perfecto) to read more about Turbo Web Automation.*
 
 ### Perfecto DigitalZoom reporting:
 

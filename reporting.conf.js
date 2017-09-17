@@ -3,21 +3,19 @@ let logger = console,
   host = process.env.host,
   token = process.env.token;
 
-// Use Security token for Perfecto Turbo Web authentication
-// let token = '';
-
 exports.config = {
 
-  seleniumAddress: `https://${host}/nexperience/perfectomobile/wd/hub`,
+  seleniumAddress: `https://${host}/nexperience/perfectomobile/wd/hub/fast`,
 
   /**
-   * For perfecto Turbo Web follow the instructions at:
-   * http://developers.perfectomobile.com/display/PD/Turbo+Web+Automation
+   * For more information regarding Perfecto Turbo Web please visit:
+   * http://developers.perfectomobile.com/display/PD/Automating+Web-apps+with+Perfecto
    *
-   * In addition change the seleniumAddress in this config file to be:
-   * seleniumAddress: `https://${host}/nexperience/perfectomobile/wd/hub/fast`,
+   * In order to use regular web change the seleniumAddress in this config file to be:
+   * seleniumAddress: `https://${host}/nexperience/perfectomobile/wd/hub`,
    *
-   * and add your security token to the capabilities
+   * You can use username and password instead security token for regular web (only).
+   * Be noted that using old credentials instead of security token is NOT recommended.
    */
 
   //Capabilities to be passed to the webdriver instance.
@@ -25,7 +23,7 @@ exports.config = {
     platformName: 'Windows',
     platformVersion: '10',
     browserName: 'Chrome',
-    browserVersion: '58',
+    browserVersion: 'latest',
     resolution: '1280x1024',
     securityToken: token
   },
